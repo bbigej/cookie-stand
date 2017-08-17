@@ -3,7 +3,7 @@
 -To be filled in properly later.-
 
 FUNCTION:  ***************
-Main function: calculate # of cookies each location must make every (cookies+location per day),
+Main function: calculate # of cookies each location must make every day (cookies+location per day),
 dependent on:
 
 hours: 10-6 pm  (8 hours)
@@ -18,7 +18,7 @@ eventual features:
     easy ability to modify input #s based on day of week, special events
     
 
-WEB DESIGN *************
+WEB DESIGN ***************
 
 logo image
 color scheme
@@ -40,3 +40,11 @@ repeatable
 T-shirt ready
 
 See instructions in add'l info to begin
+
+
+
+
+$$$$$$$
+
+math.random order of operations?
+do keys have to have different variable names that other object keys?
