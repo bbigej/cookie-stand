@@ -40,9 +40,9 @@ var pioneerSq = {
             var cookiesThatHr = custNum * pioneerSq.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message += "<li>" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
-        message += "<li>Total: " + totalCookies + " cookies </li>";
+        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
         updatePage();
     },
 };
@@ -64,9 +64,9 @@ var pdxAirport = {
             var cookiesThatHr = custNum * pdxAirport.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message2 += "<li>" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            message2 += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
-        message2 += "<li>Total: " + totalCookies + " cookies </li>";
+        message2 += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
         updatePage();     
     },
 };
@@ -88,9 +88,9 @@ var washSq = {
             var cookiesThatHr = custNum * washSq.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message3 += "<li>" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            message3 += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
-        message3 += "<li>Total: " + totalCookies + " cookies </li>";
+        message3 += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
         updatePage();     
     },
 };
@@ -113,9 +113,9 @@ var sellwood = {
             var cookiesThatHr = custNum * sellwood.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message4 += "<li>" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            message4 += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
-        message4 += "<li>Total: " + totalCookies + " cookies </li>";
+        message4 += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
         updatePage();     
     },
 };  
@@ -137,9 +137,9 @@ var pearlDis = {
             var cookiesThatHr = custNum * pearlDis.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message5 += "<li>" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            message5 += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
-        message5 += "<li>Total: " + totalCookies + " cookies </li>";
+        message5 += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
         updatePage();     
     },
 };

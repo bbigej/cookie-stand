@@ -20,8 +20,8 @@ eventual features:
 
 WEB DESIGN ***************
 
-logo image
-color scheme
+use logo image
+a color scheme
 custom google font for highlights
  - san-serif font for data (such as Arial, Verdana, Helvetica)
  - serif web font for text (Georgia, Times)
