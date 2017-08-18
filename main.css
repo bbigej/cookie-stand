@@ -8,6 +8,7 @@ body {
 h1 {
     color: #0F340F;
     font-family: 'Open Sans', Verdana, sans-serif;
+    width: 350px;
 }
 
 .data {
@@ -16,19 +17,27 @@ h1 {
 
 p {
     font-family: Georgia, Times, serif;
+    text-align: center;
+    width: 350px;
 }
 
 li {
-    color: #282756;
+    color: #7C511F;
     font-weight: bold;
+    padding-right: 110px;
 }
 
 .location {
-   color: #C6BE30 
+   color: #211F06 
 }
 
 ul {
-    background-color: black;
-    width: 200px;
-    border-radius: 40px;
+    background-color: #0F340F;
+    width: 260px;
+    border-radius: 25px;
+    padding-left: 100px;
+}
+
+.content {
+    text-align: center;
 }
