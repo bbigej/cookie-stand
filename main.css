@@ -9,6 +9,7 @@ h1 {
     color: #0F340F;
     font-family: 'Open Sans', Verdana, sans-serif;
     width: 350px;
+    padding-left: 10px;
 }
 
 .data {
@@ -18,13 +19,15 @@ h1 {
 p {
     font-family: Georgia, Times, serif;
     text-align: center;
-    width: 350px;
+    width: 340px;
 }
 
 li {
     color: #7C511F;
     font-weight: bold;
-    padding-right: 110px;
+    text-align: left;
+    width: 250px; 
+    margin-top: 1px;
 }
 
 .location {
@@ -32,10 +35,14 @@ li {
 }
 
 ul {
+    border: solid 1px;
     background-color: #0F340F;
-    width: 260px;
+    width: 175px;
+    height: 175px;
     border-radius: 25px;
-    padding-left: 100px;
+    padding: 17px 15px 7px 60px;
+    margin-left: 48px;
+    margin-right: 40px;
 }
 
 .content {

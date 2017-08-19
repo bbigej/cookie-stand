@@ -1,8 +1,15 @@
 # cookie-stand
 
--To be filled in properly later.-
+By Bryan Bigej
 
-FUNCTION:  ***************
+The Pat's Salmon Cookie Problem Domain
+
+This project is based on a fictional customer named Pat who is starting a cookie store business.
+He needs to know how many cookies must be produced at each franchise location in order to use resources most effectivelly, based on the average number of cookies purchased per customer and average customer numbers. 
+He wanted a web application built based on this information with enough flexiblity for future modifications.
+
+
+FUNCTION  ****************
 Main function: calculate # of cookies each location must make every day (cookies+location per day),
 dependent on:
 
@@ -40,11 +47,3 @@ repeatable
 T-shirt ready
 
 See instructions in add'l info to begin
-
-
-
-
-$$$$$$$
-
-math.random order of operations?
-do keys have to have different variable names that other object keys?
