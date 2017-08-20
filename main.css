@@ -12,6 +12,10 @@ h1 {
     padding-left: 10px;
 }
 
+h2 {
+    width: 350px;
+    text-align: center;
+}
 .data {
     font-family: Arial, Helvetica, sans-serif; 
 }
@@ -47,4 +51,32 @@ ul {
 
 .content {
     text-align: center;
+}
+
+#bodycolor {
+    border: 1px solid;
+    height: 100px;
+    width: 200px;
+    background-color: #A56B28;
+} 
+
+#headinglistcolor {
+    border: 1px solid;
+    height: 100px;
+    width: 200px;
+    background-color:#0F340F; 
+}
+
+#listitemcolor { 
+    border: 1px solid;
+    height: 100px;
+    width: 200px;
+    background-color:#7C511F; 
+}
+
+#storenamecolor {
+    border: 1px solid;
+    height: 100px;
+    width: 200px;
+    background-color:#211F06;
 }
