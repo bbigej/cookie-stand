@@ -1,28 +1,8 @@
 
-var locMessage = "";
-var message = "";
-var locMessage2 = "";
-var message2 = "";
-var locMessage3 = "";
-var message3 = "";
-var locMessage4 = "";
-var message4 = "";
-var locMessage5 = "";
-var message5 = "";
-
 var hoursArray = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM",]
 
-function updatePage() {
-    document.getElementById('cookieStoreLoc').innerHTML = locMessage;
-    document.getElementById('cookieStore').innerHTML = message;
-    document.getElementById('cookieStoreLoc2').innerHTML = locMessage2;
-    document.getElementById('cookieStore2').innerHTML = message2;   
-    document.getElementById('cookieStoreLoc3').innerHTML = locMessage3;
-    document.getElementById('cookieStore3').innerHTML = message3; 
-    document.getElementById('cookieStoreLoc4').innerHTML = locMessage4;
-    document.getElementById('cookieStore4').innerHTML = message4; 
-    document.getElementById('cookieStoreLoc5').innerHTML = locMessage5;
-    document.getElementById('cookieStore5').innerHTML = message5; 
+function updatePage(id, message) {
+    document.getElementById(id).innerHTML = message; 
 }
 
 
@@ -34,7 +14,8 @@ var pioneerSq = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        locMessage = pioneerSq.storeLoc
+        var message = "";
+        updatePage("cookieStoreLoc", pioneerSq.storeLoc);
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (pioneerSq.maxCustHr - pioneerSq.minCustHr) + pioneerSq.minCustHr);
             var cookiesThatHr = custNum * pioneerSq.avgCookiePerCust;
@@ -43,7 +24,7 @@ var pioneerSq = {
             message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
         message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage();
+        updatePage("cookieStore", message);
     },
 };
 
@@ -58,16 +39,17 @@ var pdxAirport = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        locMessage2 = pdxAirport.storeLoc
+        var message = "";
+        updatePage("cookieStoreLoc2", pdxAirport.storeLoc);
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (pdxAirport.maxCustHr - pdxAirport.minCustHr) + pdxAirport.minCustHr);
             var cookiesThatHr = custNum * pdxAirport.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message2 += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
-        message2 += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage();     
+        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
+        updatePage("cookieStore2", message);
     },
 };
 
@@ -82,16 +64,18 @@ var washSq = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        locMessage3 = washSq.storeLoc
+        var message = "";
+        updatePage("cookieStoreLoc3", washSq.storeLoc);
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (washSq.maxCustHr - washSq.minCustHr) + washSq.minCustHr);
             var cookiesThatHr = custNum * washSq.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message3 += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
-        message3 += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage();     
+        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
+        updatePage("cookieStore3", message);     
+        
     },
 };
 
@@ -107,16 +91,17 @@ var sellwood = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        locMessage4 = sellwood.storeLoc
+        var message = "";
+        updatePage("cookieStoreLoc4", sellwood.storeLoc);
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (sellwood.maxCustHr - sellwood.minCustHr) + sellwood.minCustHr);
             var cookiesThatHr = custNum * sellwood.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message4 += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
-        message4 += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage();     
+        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
+        updatePage("cookieStore4", message);     
     },
 };  
 
@@ -131,16 +116,17 @@ var pearlDis = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        locMessage5 = pearlDis.storeLoc
+        var message = "";
+        updatePage("cookieStoreLoc5", pearlDis.storeLoc);
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (pearlDis.maxCustHr - pearlDis.minCustHr) + pearlDis.minCustHr);
             var cookiesThatHr = custNum * pearlDis.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message5 += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
         }
-        message5 += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage();     
+        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
+        updatePage("cookieStore5", message);    
     },
 };
 
