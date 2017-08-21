@@ -6,8 +6,8 @@ function addStoreName(addedStoreName, storeNameId) {
     pGraphToUse.innerText = addedStoreName;
   }
 
-function addListItem(contentToAdd) {
-    var listToUse = document.getElementById("cookieStore");
+function addListItem(contentToAdd, listId) {
+    var listToUse = document.getElementById(listId);
     var cookieStandItem = document.createElement("li");
     cookieStandItem.setAttribute('class', 'data')
     cookieStandItem.innerText = contentToAdd;
@@ -34,11 +34,9 @@ var pioneerSq = {
     },
 };
 
-
 pioneerSq.rndNumCustHr();
 
-
-/*var pdxAirport = {
+var pdxAirport = {
     storeLoc: "Portland Airport",
     minCustHr: 6,
     maxCustHr: 24,
@@ -52,15 +50,13 @@ pioneerSq.rndNumCustHr();
             var cookiesThatHr = custNum * pdxAirport.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            addListItem(hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies", "cookieStore2");
         }
-        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage("cookieStore2", message);
+            addListItem("Total: " + totalCookies + " cookies", "cookieStore2");
     },
 };
 
 pdxAirport.rndNumCustHr();
-
 
 var washSq = {
     storeLoc: "Washington Square",
@@ -76,17 +72,13 @@ var washSq = {
             var cookiesThatHr = custNum * washSq.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            addListItem(hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies", "cookieStore3");
         }
-        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage("cookieStore3", message);     
-        
+            addListItem("Total: " + totalCookies + " cookies", "cookieStore3");
     },
 };
 
 washSq.rndNumCustHr();
-
-
 
 var sellwood = {
     storeLoc: "Sellwood",
@@ -102,15 +94,13 @@ var sellwood = {
             var cookiesThatHr = custNum * sellwood.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            addListItem(hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies", "cookieStore4");
         }
-        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage("cookieStore4", message);     
+        addListItem("Total: " + totalCookies + " cookies", "cookieStore4");
     },
 };  
 
 sellwood.rndNumCustHr();
-
 
 var pearlDis = {
     storeLoc: "Pearl District",
@@ -126,11 +116,10 @@ var pearlDis = {
             var cookiesThatHr = custNum * pearlDis.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            addListItem(hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies", "cookieStore5");
         }
-        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage("cookieStore5", message);    
+        addListItem("Total: " + totalCookies + " cookies", "cookieStore5");
     },
 };
 
-pearlDis.rndNumCustHr();    */
+pearlDis.rndNumCustHr();
