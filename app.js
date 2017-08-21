@@ -1,11 +1,6 @@
 
 var hoursArray = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM",]
 
-function updatePage(id, message) {
-    document.getElementById(id).innerHTML = message; 
-}
-
-
 var pioneerSq = {
     storeLoc: "Pioneer Square",
     minCustHr: 17, 
@@ -14,24 +9,30 @@ var pioneerSq = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        var message = "";
-        updatePage("cookieStoreLoc", pioneerSq.storeLoc);
+        addListItem(pioneerSq.storeLoc);
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (pioneerSq.maxCustHr - pioneerSq.minCustHr) + pioneerSq.minCustHr);
             var cookiesThatHr = custNum * pioneerSq.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
-            message += "<li class=\"data\">" + hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies </li>";
+            addListItem(hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies", "cookieStore");
         }
-        message += "<li class=\"data\">Total: " + totalCookies + " cookies </li>";
-        updatePage("cookieStore", message);
+        addListItem("Total: " + totalCookies + " cookies", "cookieStore");
     },
 };
+
+function addListItem(contentToAdd) {
+    var listToUse = document.getElementById("cookieStore");
+    var cookieStandItem = document.createElement("li");
+    cookieStandItem.innerText = contentToAdd;
+    listToUse.appendChild(cookieStandItem);
+  }
+  
 
 pioneerSq.rndNumCustHr();
 
 
-var pdxAirport = {
+/*var pdxAirport = {
     storeLoc: "Portland Airport",
     minCustHr: 6,
     maxCustHr: 24,
@@ -130,4 +131,4 @@ var pearlDis = {
     },
 };
 
-pearlDis.rndNumCustHr();
+pearlDis.rndNumCustHr();    */
