@@ -1,6 +1,19 @@
 
 var hoursArray = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM",]
 
+function addStoreName(addedStoreName, storeNameId) {
+    var pGraphToUse = document.getElementById(storeNameId);
+    pGraphToUse.innerText = addedStoreName;
+  }
+
+function addListItem(contentToAdd) {
+    var listToUse = document.getElementById("cookieStore");
+    var cookieStandItem = document.createElement("li");
+    cookieStandItem.setAttribute('class', 'data')
+    cookieStandItem.innerText = contentToAdd;
+    listToUse.appendChild(cookieStandItem);
+  }
+
 var pioneerSq = {
     storeLoc: "Pioneer Square",
     minCustHr: 17, 
@@ -9,7 +22,7 @@ var pioneerSq = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        addStoreName(pioneerSq.storeLoc);
+        addStoreName(pioneerSq.storeLoc, "cookieStoreLoc");
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (pioneerSq.maxCustHr - pioneerSq.minCustHr) + pioneerSq.minCustHr);
             var cookiesThatHr = custNum * pioneerSq.avgCookiePerCust;
@@ -22,19 +35,6 @@ var pioneerSq = {
 };
 
 
-function addStoreName(addedStoreName) {
-    var listToUse = document.getElementById("cookieStoreLoc");
-    listToUse.innerText = addedStoreName;
-  }
-
-function addListItem(contentToAdd) {
-    var listToUse = document.getElementById("cookieStore");
-    var cookieStandItem = document.createElement("li");
-    cookieStandItem.setAttribute('class', 'data')
-    cookieStandItem.innerText = contentToAdd;
-    listToUse.appendChild(cookieStandItem);
-  }
-
 pioneerSq.rndNumCustHr();
 
 
@@ -46,8 +46,7 @@ pioneerSq.rndNumCustHr();
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        var message = "";
-        updatePage("cookieStoreLoc2", pdxAirport.storeLoc);
+        addStoreName(pdxAirport.storeLoc, "cookieStoreLoc2");
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (pdxAirport.maxCustHr - pdxAirport.minCustHr) + pdxAirport.minCustHr);
             var cookiesThatHr = custNum * pdxAirport.avgCookiePerCust;
@@ -71,8 +70,7 @@ var washSq = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        var message = "";
-        updatePage("cookieStoreLoc3", washSq.storeLoc);
+        addStoreName(washSq.storeLoc, "cookieStoreLoc3");
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (washSq.maxCustHr - washSq.minCustHr) + washSq.minCustHr);
             var cookiesThatHr = custNum * washSq.avgCookiePerCust;
@@ -98,8 +96,7 @@ var sellwood = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        var message = "";
-        updatePage("cookieStoreLoc4", sellwood.storeLoc);
+        addStoreName(sellwood.storeLoc, "cookieStoreLoc4");
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (sellwood.maxCustHr - sellwood.minCustHr) + sellwood.minCustHr);
             var cookiesThatHr = custNum * sellwood.avgCookiePerCust;
@@ -123,8 +120,7 @@ var pearlDis = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        var message = "";
-        updatePage("cookieStoreLoc5", pearlDis.storeLoc);
+        addStoreName(pearlDis.storeLoc, "cookieStoreLoc5");
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (pearlDis.maxCustHr - pearlDis.minCustHr) + pearlDis.minCustHr);
             var cookiesThatHr = custNum * pearlDis.avgCookiePerCust;
