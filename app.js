@@ -24,6 +24,7 @@ var pioneerSq = {
 function addListItem(contentToAdd) {
     var listToUse = document.getElementById("cookieStore");
     var cookieStandItem = document.createElement("li");
+    cookieStandItem.setAttribute('class', 'data')
     cookieStandItem.innerText = contentToAdd;
     listToUse.appendChild(cookieStandItem);
   }
