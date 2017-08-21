@@ -9,7 +9,7 @@ var pioneerSq = {
     rndNumCustHr: function() {
         var totalCookies = 0;
         var cookieArray = new Array();
-        addListItem(pioneerSq.storeLoc);
+        addStoreName(pioneerSq.storeLoc);
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (pioneerSq.maxCustHr - pioneerSq.minCustHr) + pioneerSq.minCustHr);
             var cookiesThatHr = custNum * pioneerSq.avgCookiePerCust;
@@ -21,6 +21,12 @@ var pioneerSq = {
     },
 };
 
+
+function addStoreName(addedStoreName) {
+    var listToUse = document.getElementById("cookieStoreLoc");
+    listToUse.innerText = addedStoreName;
+  }
+
 function addListItem(contentToAdd) {
     var listToUse = document.getElementById("cookieStore");
     var cookieStandItem = document.createElement("li");
@@ -28,7 +34,6 @@ function addListItem(contentToAdd) {
     cookieStandItem.innerText = contentToAdd;
     listToUse.appendChild(cookieStandItem);
   }
-  
 
 pioneerSq.rndNumCustHr();
 
