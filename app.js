@@ -1,7 +1,71 @@
 
 var hoursArray = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM",]
 
-function addStoreName(addedStoreName, storeNameId) {
+var Store = function(name, minCustHr, maxCustHr) {
+    this.storeName = name;
+    this.minCustHr = minCustHr;
+    this.maxCustHr = maxCustHr;
+    this.getStoreInfo = function() {
+        var totalCookies = 0;
+        var cookieArray = new Array();
+        for (var index = 0; index < 8; index++) {
+            var custNum = Math.floor(Math.random() * (this.maxCustHr - this.minCustHr) + this.minCustHr);
+            var cookiesThatHr = custNum * this.avgCookiePerCust;
+            cookieArray.push(cookiesThatHr);
+            totalCookies = totalCookies + Math.floor(cookiesThatHr);
+            var cookieHrRow = document.createElement("tr");
+            var cookieHrCell = document.createElement("td");
+            cookieHrCell.innerText = hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies";
+            cookieHrRow.appendChild(cookieHrCell)
+            
+            }
+            
+       var totalCell = document.createElement("td");
+       totalCell.innerText = "Total: " + totalCookies + " cookies";
+       cookieHrRow.appendChild(totalCell);
+       return cookieHrRow;
+       return totalCell;
+    }
+}
+
+
+var storeRoster = [];
+storeRoster.push(new Store("Pioneer Square", 17, 88));
+
+function buildStoreTable() {
+    var tableBody = document.getElementById("table-body");
+    for (var index = 0; index < storeRoster.length; index++) {
+    tableBody.appendChild(storeRoster[index].getStoreInfo());
+    }
+}
+
+buildStoreTable();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* var hoursArray = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM",]
+
+ function addStoreName(addedStoreName, storeNameId) {
     var pGraphToUse = document.getElementById(storeNameId);
     pGraphToUse.innerText = addedStoreName;
   }
@@ -122,4 +186,4 @@ var pearlDis = {
     },
 };
 
-pearlDis.rndNumCustHr();
+pearlDis.rndNumCustHr(); */
