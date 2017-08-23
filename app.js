@@ -1,10 +1,11 @@
 
 var hoursArray = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM",]
 
-var Store = function(name, minCustHr, maxCustHr) {
+var Store = function(name, minCustHr, maxCustHr, avgCookiePerCust) {
     this.storeName = name;
     this.minCustHr = minCustHr;
     this.maxCustHr = maxCustHr;
+    this.avgCookiePerCust = avgCookiePerCust;
     this.getStoreInfo = function() {
         var totalCookies = 0;
         var cookieArray = new Array();
@@ -15,22 +16,21 @@ var Store = function(name, minCustHr, maxCustHr) {
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
             var cookieHrRow = document.createElement("tr");
             var cookieHrCell = document.createElement("td");
-            cookieHrCell.innerText = hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies";
-            cookieHrRow.appendChild(cookieHrCell)
-            
+            cookieHrCell.innerText = hoursArray[index] + ": " + Math.floor(cookiesThatHr) + " cookies";
+            cookieHrRow.appendChild(cookieHrCell);
+            return cookieHrRow;
             }
-            
-       var totalCell = document.createElement("td");
-       totalCell.innerText = "Total: " + totalCookies + " cookies";
-       cookieHrRow.appendChild(totalCell);
-       return cookieHrRow;
-       return totalCell;
+
+     var totalCell = document.createElement("td");
+     totalCell.innerText = "Total: " + totalCookies + " cookies";
+     cookieHrRow.appendChild(totalCell);
+     return totalCell;
     }
 }
 
 
 var storeRoster = [];
-storeRoster.push(new Store("Pioneer Square", 17, 88));
+storeRoster.push(new Store("Pioneer Square", 17, 88, 5.2));
 
 function buildStoreTable() {
     var tableBody = document.getElementById("table-body");
