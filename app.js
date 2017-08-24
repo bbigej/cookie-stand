@@ -7,7 +7,6 @@ var Store = function(name, minCustHr, maxCustHr, avgCookiePerCust) {
     this.maxCustHr = maxCustHr;
     this.avgCookiePerCust = avgCookiePerCust;
     this.getStoreInfo = function(tableReference) {
-
         var nameRow = document.createElement("tr");
         var nameCell = document.createElement("td");
         nameCell.innerText = this.storeName;
