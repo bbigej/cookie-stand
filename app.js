@@ -6,25 +6,37 @@ var Store = function(name, minCustHr, maxCustHr, avgCookiePerCust) {
     this.minCustHr = minCustHr;
     this.maxCustHr = maxCustHr;
     this.avgCookiePerCust = avgCookiePerCust;
-    this.getStoreInfo = function() {
+    this.getStoreInfo = function(tableReference) {
+
+        var nameRow = document.createElement("tr");
+        var nameCell = document.createElement("td");
+        nameCell.innerText = this.storeName;
+        nameRow.appendChild(nameCell);
+        tableReference.appendChild(nameRow);
+      //  return nameRow
+
         var totalCookies = 0;
         var cookieArray = new Array();
+
         for (var index = 0; index < 8; index++) {
             var custNum = Math.floor(Math.random() * (this.maxCustHr - this.minCustHr) + this.minCustHr);
             var cookiesThatHr = custNum * this.avgCookiePerCust;
             cookieArray.push(cookiesThatHr);
             totalCookies = totalCookies + Math.floor(cookiesThatHr);
+            
             var cookieHrRow = document.createElement("tr");
             var cookieHrCell = document.createElement("td");
-            cookieHrCell.innerText = hoursArray[index] + ": " + Math.floor(cookiesThatHr) + " cookies";
+            cookieHrCell.innerText = hoursArray[index] + ": " + Math.floor(cookieArray[index]) + " cookies";
             cookieHrRow.appendChild(cookieHrCell);
-            return cookieHrRow;
+            tableReference.appendChild(cookieHrRow);
+           // return cookieHrRow
             }
 
-     var totalCell = document.createElement("td");
-     totalCell.innerText = "Total: " + totalCookies + " cookies";
-     cookieHrRow.appendChild(totalCell);
-     return totalCell;
+        var totalRow = document.createElement("tr");
+        var totalCell = document.createElement("td");
+        totalCell.innerText = "Total: " + totalCookies + " cookies";
+        totalRow.appendChild(totalCell);
+        tableReference.appendChild(totalRow);
     }
 }
 
@@ -35,7 +47,7 @@ storeRoster.push(new Store("Pioneer Square", 17, 88, 5.2));
 function buildStoreTable() {
     var tableBody = document.getElementById("table-body");
     for (var index = 0; index < storeRoster.length; index++) {
-    tableBody.appendChild(storeRoster[index].getStoreInfo());
+    storeRoster[index].getStoreInfo(tableBody);
     }
 }
 
