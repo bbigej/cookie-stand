@@ -16,14 +16,14 @@ td {
     font-family: Arial, Helvetica, sans-serif; 
     color: #7C511F;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     width: 250px; 
     margin-top: 1px;
 }
 
-.location {
+/*.location {
    color: #211F06 
-}
+} */
 
 table {
     border: solid 1px;

@@ -46,9 +46,14 @@ storeRoster.push(new Store("Sellwood", 20, 48, 3.3));
 storeRoster.push(new Store("Pearl District", 3, 24, 2.6));
 
 function buildStoreTable() {
-    var tableBody = document.getElementById("table-body");
+    var htmlBody = document.getElementById("html-body");
+  //  var tableBody = document.getElementById("table-body");
     for (var index = 0; index < storeRoster.length; index++) {
-    storeRoster[index].getStoreInfo(tableBody);
+        var createdTable = document.createElement("table");
+        htmlBody.appendChild(createdTable);
+        var createdTableBody = document.createElement("tbody");
+        createdTable.appendChild(createdTableBody);
+        storeRoster[index].getStoreInfo(htmlBody);
     }
 }
 
