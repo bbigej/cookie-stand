@@ -47,13 +47,12 @@ storeRoster.push(new Store("Pearl District", 3, 24, 2.6));
 
 function buildStoreTable() {
     var htmlBody = document.getElementById("html-body");
-  //  var tableBody = document.getElementById("table-body");
     for (var index = 0; index < storeRoster.length; index++) {
         var createdTable = document.createElement("table");
         htmlBody.appendChild(createdTable);
         var createdTableBody = document.createElement("tbody");
         createdTable.appendChild(createdTableBody);
-        storeRoster[index].getStoreInfo(htmlBody);
+        storeRoster[index].getStoreInfo(createdTableBody);
     }
 }
 
