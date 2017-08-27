@@ -12,6 +12,33 @@ h1 {
     padding-left: 10px;
 }
 
+form {
+    border: solid 1px;
+    background-color: #0F340F;
+    color: #7C511F;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 385px;
+    height: 110px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+form label {
+    float:left;
+    padding-bottom: 3px; 
+}
+
+form input {
+    float: right;
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}
+
+form input[type = button] {
+    clear: both;
+}
+
 td {
     font-family: Arial, Helvetica, sans-serif; 
     color: #7C511F;
@@ -19,13 +46,8 @@ td {
     text-align: left;
     width: 320px; 
     margin-top: 50px; 
-
     padding-right: 5px;
 }
-
-/*.location {
-   color: #211F06 
-} */
 
 table {
     border: solid 1px;
