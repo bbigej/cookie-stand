@@ -56,4 +56,25 @@ function buildStoreTable() {
     }
 }
 
+function userAddStore() {
+    var form = document.forms['newStoreForm'];
+    var newStoreName = form.elements['storeName'];
+    var minCustomers = form.elements['minCust'];
+    var maxCustomers = form.elements['maxCust'];
+    var avgCookieperCustomer = form.elements['avgCookieperCustomer'];
+    
+    storeRoster.push(new Store(newStoreName.value, minCustomers.value, maxCustomers.value, avgCookieperCustomer.value));
+
+    var htmlBody = document.getElementById("html-body");
+    for (var index = 0; index < storeRoster.length; index++) {
+        var createdTable = document.createElement("table");
+        htmlBody.appendChild(createdTable);
+        var createdTableBody = document.createElement("tbody");
+        createdTable.appendChild(createdTableBody);
+        storeRoster[index].getStoreInfo(createdTableBody);
+
+        buildStoreTable();
+    }
+}
+
 buildStoreTable();
