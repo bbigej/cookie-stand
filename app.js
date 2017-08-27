@@ -62,7 +62,7 @@ function userAddStore() {
     var minCustomers = form.elements['minCust'];
     var maxCustomers = form.elements['maxCust'];
     var avgCookieperCustomer = form.elements['avgCookieperCustomer'];
-    
+
     storeRoster.push(new Store(newStoreName.value, minCustomers.value, maxCustomers.value, avgCookieperCustomer.value));
 
     var htmlBody = document.getElementById("html-body");
